@@ -10,4 +10,4 @@ This will require API-handling from both IMDB and Rotten Tomates and Oauth login
 
 I am also aiming to use a continuous integration tool such as Travis. Testing for the client-side will be conducted using Mocha.
 
-Do you have any insight on using eiter Flask or Ruby on Rails for the server-side?
+Do you have any insight on using either Flask or Ruby on Rails for the server-side?
