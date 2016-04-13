@@ -8,7 +8,18 @@
 </head>
 <body>
 
-<%= yield %>
+<ul class="nav navbar-nav">
+  <li><%= link_to 'Facebook', '/auth/facebook' %></li>
+  <% if current_user %>
+      <ul class="nav navbar-nav pull-right">
+        <li><%= current_user.name %></li>
+        <li><%= image_tag current_user.image_url, alt: current_user.name %></li>
+        <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+      </ul>
+  <% else %>
+     <h1>Not logged in</h1>
+  <% end %>
+</ul>
 
 </body>
 </html>
