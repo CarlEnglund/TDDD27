@@ -30,6 +30,9 @@ gem 'omniauth-facebook'
 #Postgres
 gem 'pg'
 
+#Better error displaying
+gem 'better_errors'
+
 #IMDB
 #gem 'imdb', '~> 0.8'
 
@@ -42,6 +45,9 @@ gem 'pg'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'rails_12factor', group: :production
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
