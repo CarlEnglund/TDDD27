@@ -8,13 +8,13 @@
 </head>
 <body>
 
-<ul class="nav navbar-nav">
+
   <%= yield %>
   <% if !current_user %>
       <li><%= link_to 'Facebook', '/auth/facebook' %></li>
       <h1>Not logged in</h1>
   <% end %>
-</ul>
+
 
 </body>
 </html>
