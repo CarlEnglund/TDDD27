@@ -6,5 +6,7 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
+  def landing
+  end
 
 end

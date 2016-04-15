@@ -26,6 +26,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #React rails
 gem 'react-rails'
 
+
+#Add stylussupport
+gem 'stylus'
+
+
 #Facebook authentication
 gem 'omniauth-facebook'
 
