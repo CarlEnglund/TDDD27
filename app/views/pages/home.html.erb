@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>MoviePlace</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+
 <% if current_user %>
     Welcome back <%= current_user.name %>!
     <li><%= image_tag current_user.image_url, alt: current_user.name %></li>
     <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
 <% end %>
 
-</body>
-</html>

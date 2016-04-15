@@ -9,7 +9,6 @@
 <body>
 
 <ul class="nav navbar-nav">
-Welcome to the movieplace!
   <%= yield %>
   <% if !current_user %>
       <li><%= link_to 'Facebook', '/auth/facebook' %></li>
