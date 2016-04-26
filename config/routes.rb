@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reviews
    root 'pages#landing'
 
    get '/home', to: 'pages#home'
