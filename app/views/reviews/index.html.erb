@@ -1,25 +1,20 @@
-
-<% if current_user %>
-    Welcome back <%= current_user.name %>!
-    <li><%= image_tag current_user.image_url, alt: current_user.name %></li>
-    <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
-<% end %>
+<p id="notice"><%= notice %></p>
 
 <h1>Listing Reviews</h1>
 
 <table>
   <thead>
-  <tr>
-    <th>Name</th>
-    <th>Score</th>
-    <th>Comment</th>
-    <th>Movie</th>
-    <th colspan="3"></th>
-  </tr>
+    <tr>
+      <th>Name</th>
+      <th>Score</th>
+      <th>Comment</th>
+      <th>Movie</th>
+      <th colspan="3"></th>
+    </tr>
   </thead>
 
   <tbody>
-  <% @reviews.each do |review| %>
+    <% @reviews.each do |review| %>
       <tr>
         <td><%= review.name %></td>
         <td><%= review.score %></td>
@@ -29,8 +24,10 @@
         <td><%= link_to 'Edit', edit_review_path(review) %></td>
         <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-  <% end %>
+    <% end %>
   </tbody>
 </table>
 
 <br>
+
+<%= link_to 'New Review', new_review_path %>
