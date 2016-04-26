@@ -30,6 +30,8 @@ gem 'react-rails'
 #Add stylussupport
 gem 'stylus'
 
+#Moviedb api
+gem 'themoviedb'
 
 #Facebook authentication
 gem 'omniauth-facebook'
