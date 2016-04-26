@@ -4,7 +4,12 @@
     <li><%= image_tag current_user.image_url, alt: current_user.name %></li>
     <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
 <% end %>
-
+<div>
+  <h1>Search for a movie</h1>
+  <%= form_tag("/search", :method => "get") do %>
+      <%= text_field_tag(:query, nil, :class => "input-xlarge searchInput") %>
+  <% end %>
+</div>
 <h1>Listing Reviews</h1>
 
 <table>
