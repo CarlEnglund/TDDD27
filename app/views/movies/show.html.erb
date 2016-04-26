@@ -17,6 +17,23 @@
 
       <h3>Overview</h3>
       <%= @movie["overview"] %>
+
+      <tbody>
+      <% @reviews.each do |review| %>
+          <tr>
+            <td><%= review.name %></td>
+            <td><%= review.score %></td>
+            <td><%= review.comment %></td>
+            <td><%= review.movie_id %></td>
+            <td><%= link_to 'Show', review %></td>
+            <td><%= link_to 'Edit', edit_review_path(review) %></td>
+            <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+      <% end %>
+      </tbody>
+      </table>
     </div>
+    <%= link_to 'New Review', new_review_path(:movie_id => @movie["id"]) %>
+
   </div>
 </div>
