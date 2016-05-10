@@ -19,9 +19,10 @@
       <%= @movie["overview"] %>
 
       <tbody>
+      <% unless @reviews.present? %>
       <% @reviews.each do |review| %>
           <tr>
-            <td><%= review.name %></td>
+            <td><%= Tmdb::Movie(review.name) %></td>
             <td><%= review.score %></td>
             <td><%= review.comment %></td>
             <td><%= review.movie_id %></td>
@@ -33,6 +34,7 @@
       </tbody>
       </table>
     </div>
+      <% end %>
     <%= link_to 'New Review', new_review_path(:movie_id => @movie["id"]) %>
 
   </div>
