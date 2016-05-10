@@ -1,7 +1,10 @@
 
-<% if current_user %>
-    Welcome back <%= current_user.name %>!
-    <li><%= image_tag current_user.image_url, alt: current_user.name %></li>
-    <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
-<% end %>
+<%= react_component('Header', text: 'Moviepalace') %>
+<div class="container">
+  <%= react_component('MainBox', props: [@reviews]) %>
+  <%= react_component('ProfileBox', props: [current_user, @userReviews]) %>
+</div>
 
+
+
+<%= react_component('Footer') %>
