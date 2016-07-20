@@ -4,7 +4,7 @@ class Header extends React.Component {
       <div className="header">
         <div className="headerText">{this.props.text}</div>
           <div className="searchField"><Search></Search></div>
-          <a href="/logout">Log out</a>
+            
       </div>
     );
   }

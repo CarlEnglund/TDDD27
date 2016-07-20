@@ -1,4 +1,3 @@
-var hej = null;
 var RecentReviewList = React.createClass({
 
     getInitialState: function() {
@@ -45,8 +44,9 @@ var RecentReviewList = React.createClass({
         console.log(array2);
         return (
 
-            <div>{this.state.poster.map(function(data, key){
-                return (<PosterList poster={data} name={array2[key]} ></PosterList>)
+            <div className="Grid  -between">{this.state.poster.map(function(data, key){
+                console.log(array)
+                return (<PosterList poster={data} name={array2[key]} rating={array[0][key]}></PosterList>)
             })
             }
 
@@ -58,6 +58,6 @@ var RecentReviewList = React.createClass({
 var PosterList = React.createClass({
     render: function() {
 
-        return <div><img src={this.props.poster}/><p>{this.props.name}</p></div>
+        return <div className="Cell -2of12"><img src={this.props.poster}/><p>{this.props.name}</p><p>Rating: {this.props.rating.score}</p></div>
     }
 })

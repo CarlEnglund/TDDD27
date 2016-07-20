@@ -1,4 +1,4 @@
-<table class="table table-bordered table-striped table-hover">
+<%= react_component('Header', text: 'Moviepalace') %>
   <% @movie.each do |movie| %>
       <tr>
         <td style="width:15%">
@@ -7,10 +7,12 @@
           <% end %>
         </td>
         <td>
-          <%= link_to movie.title, movie_path(movie.id) %> (<%= movie.release_date.to_date.strftime("%Y") %>) <br />
-          Writers:
-          <div class="star" data-score="<%= movie.vote_average %>">Rating: </div>
+          <%= link_to movie.title, movie_path(movie.id) %> <br />
+
+
         </td>
       </tr>
   <% end %>
 </table>
+
+<%= react_component('Footer') %>

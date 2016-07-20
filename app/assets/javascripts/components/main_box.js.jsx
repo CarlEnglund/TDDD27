@@ -8,6 +8,7 @@ var MainBox = React.createClass({
     return (
 
         <div className="mainBox">
+            <div><h1>Recent reviews</h1></div>
 
             <RecentReviewList  data={this.props.props}/>
         </div>
