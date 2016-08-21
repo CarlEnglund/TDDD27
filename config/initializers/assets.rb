@@ -1,7 +1,7 @@
 # Be sure to restart your server when you modify this file.
 
 # Version of your assets, change this if you want to expire all your assets.
-Rails.application.config.assets.version = '1.0'
+Rails.application.config.assets.version = '1.1'
 
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
@@ -19,11 +19,11 @@ Stylus.compile(File.new('app/assets/stylesheets/application.styl')) # returns th
 # If you provide a raw content String to the `Stylus.compile` method, remember to send
 # a `:filename` option so Stylus can locate your stylesheet for proper inspection.
 Stylus.debug = true
-Rails.application.config.assets.precompile += %w( landingpage.styl )
-Rails.application.config.assets.precompile += %w( header.styl )
-Rails.application.config.assets.precompile += %w( profilebox.styl )
-Rails.application.config.assets.precompile += %w( mainbox.styl )
-Rails.application.config.assets.precompile += %w( footer.styl )
-Rails.application.config.assets.precompile += %w( grd.styl )
-Rails.application.config.assets.precompile += %w( profilebox.styl )
-Rails.application.config.assets.precompile += %w( search.styl )
+#Rails.application.config.assets.precompile += %w( landingpage.styl )
+#Rails.application.config.assets.precompile += %w( header.styl )
+#Rails.application.config.assets.precompile += %w( profilebox.styl )
+#Rails.application.config.assets.precompile += %w( mainbox.styl )
+#Rails.application.config.assets.precompile += %w( footer.styl )
+#Rails.application.config.assets.precompile += %w( grd.styl )
+#Rails.application.config.assets.precompile += %w( profilebox.styl )
+#Rails.application.config.assets.precompile += %w( search.styl )
