@@ -13,7 +13,7 @@ Search = React.createClass({
 
 
         var test = 'https://api.themoviedb.org/3/search/movie?api_key=404f72b9ac53b34084b290e2f2ddabbc&query=' + query.target.value+"&page=1";
-            console.log(test);
+
             fetch(test).then((response) => response.json())
                 .then((responseData) => {
                     this.setState({
@@ -30,7 +30,6 @@ Search = React.createClass({
             source: "Bad",
         });
 
-        console.log(this.state);
     },
 
 

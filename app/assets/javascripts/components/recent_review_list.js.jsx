@@ -1,5 +1,4 @@
 var RecentReviewList = React.createClass({
-
     getInitialState: function() {
         return {
             poster: [],
@@ -7,20 +6,15 @@ var RecentReviewList = React.createClass({
 
         };
     },
-
     componentWillMount: function() {
-
-        var b = [];
+        var fetchedMovies = [];
         this.props.data.forEach(function(data) {
-            data.forEach(function(map) {
-                b.push('https://api.themoviedb.org/3/movie/' + map.movie_id + '?api_key=404f72b9ac53b34084b290e2f2ddabbc');
-            })
-
+                fetchedMovies.push('https://api.themoviedb.org/3/movie/' + data.movie_id + '?api_key=404f72b9ac53b34084b290e2f2ddabbc');
         })
 
-        for(var data in b)
+        for(var movie in fetchedMovies)
         {
-            fetch(b[data]).then((response) => response.json())
+            fetch(fetchedMovies[movie]).then((response) => response.json())
                 .then((responseData) => {
                     this.setState({
                         poster: this.state.poster.concat(["http://image.tmdb.org/t/p/w154/" + responseData.poster_path]),
@@ -32,32 +26,36 @@ var RecentReviewList = React.createClass({
     },
 
     render: function() {
-
-        var array = []
-        var array2 = []
+        var ratingArray = []
+        var movieNames = []
         this.props.data.map(function(data) {
-            array.push(data);
+            ratingArray.push(data);
         })
         this.state.name.map(function(data) {
-            array2.push(data);
+            movieNames.push(data);
         })
-        console.log(array2);
+
         return (
-
             <div className="Grid  -between">{this.state.poster.map(function(data, key){
-                console.log(array)
-                return (<PosterList poster={data} name={array2[key]} rating={array[0][key]}></PosterList>)
-            })
+                return (<Movie poster={data} name={movieNames[key]} rating={ratingArray[key]}></Movie>)
+                })
             }
-
             </div>
         );
     },
 });
 
-var PosterList = React.createClass({
+var Movie = React.createClass({
     render: function() {
-
-        return <div className="Cell -2of12"><img src={this.props.poster}/><p>{this.props.name}</p><p>Rating: {this.props.rating.score}</p></div>
+        let editPath = `reviews/${this.props.rating.id}/edit`;
+        let destroyPath = `destroy/${this.props.rating.id}`;
+        return (
+            <div className="Cell -2of12">
+                    <img src={this.props.poster}/>
+                    <p>{this.props.rating.name}</p>
+                    <p>Rating: {this.props.rating.score}</p>
+                    <a href={editPath}>Edit</a>
+                    <a href={destroyPath}>Delete</a>
+            </div>);
     }
 })
