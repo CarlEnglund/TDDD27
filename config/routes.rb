@@ -10,7 +10,10 @@ Rails.application.routes.draw do
 
    get '/logout', to: 'sessions#destroy'
 
+   get '/destroy/:id', to: 'reviews#destroy'
+
   get '/search', to: 'search#index'
 
+  get '/profile', to: 'pages#profile'
 
 end

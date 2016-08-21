@@ -1,16 +1,3 @@
-<table class="table table-bordered table-striped table-hover">
-  <% @movie.each do |movie| %>
-      <tr>
-        <td style="width:15%">
-          <%= link_to movie_path(movie.id) do %>
-              <%= image_tag("#{@configuration.base_url}w154#{movie.poster_path}") if movie.poster_path %>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to movie.title, movie_path(movie.id) %> (<%= movie.release_date.to_date.strftime("%Y") %>) <br />
-          Writers:
-          <div class="star" data-score="<%= movie.vote_average %>">Rating: </div>
-        </td>
-      </tr>
-  <% end %>
-</table>
+<%= react_component('Header', text: 'Moviepalace') %>
+<%= react_component('searchIndex', movies: @movie, img_url: @configuration.base_url) %>
+<%= react_component('Footer') %>
