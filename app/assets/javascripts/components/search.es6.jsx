@@ -26,9 +26,6 @@ Search = React.createClass({
     },
 
     componentDidMount: function() {
-        $(this.getDOMNode()).autocomplete({
-            source: "Bad",
-        });
 
     },
 

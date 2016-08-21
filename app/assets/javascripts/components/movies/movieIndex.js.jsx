@@ -2,11 +2,10 @@
 
 var movieIndex = React.createClass({
     render: function() {
-        console.log(this)
         return (
-            <div class="container-fluid">
-                <div class="row-fluid">
-                    <div class="span2">
+            <div className="container-fluid">
+                <div className="row-fluid">
+                    <div className="span2">
                         <h2>{this.props.movie.title}</h2>
                         <img src={`${this.props.img_url}w154${this.props.movie.poster_path}`} alt=""/>
                         <h3>Facts</h3>
